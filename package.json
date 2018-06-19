@@ -1,0 +1,14 @@
+{
+  "name": "kerupuk",
+  "version": "0.0.1",
+  "description": "Bisa dimakan lho",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Me",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^10.0.1"
+  }
+}
