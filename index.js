@@ -2,65 +2,34 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: false});
 const cfg = require("./botconfig.json");
 const fs = require("fs");
-const colors = require('colors');
-const moment = require('moment');
-const snekfetch = require("snekfetch");
-const prefixes = require("./prefixes.json")
-const db = require('quick.db');
-const figlet = require('figlet');
 
 bot.on("message", async message => {
   if(message.author.bot) return;
 	
     if(message.channel.type === "dm") {
         var embed = new Discord.RichEmbed()
-        .setTitle("Not Working On DM's!")
+        .setTitle("Tidak ada command Dm's")
         .setColor("RED")
         .setThumbnail(`${message.author.displayAvatarURL}`)
         .setTimestamp()
-        .addField("ERROR!", "I currently don't work in DMs")
+        .addField("ERROR!", "Anda tidak bisa menggunakan command lewat DM!")
          message.channel.send({ embed: embed })
          return;
     }
 
-    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-    if (!prefixes[message.guild.id]) {
-        prefixes[message.guild.id] = {
-            prefixes: cfg.prefix
-        };
-    }
-    let prefix = prefixes[message.guild.id].prefixes;
+ 
+    let prefix = cfg.prefix;
     let msg = message.content.toLowerCase();
     let sender = message.author;
     let args = message.content.slice(prefix.length).trim().split(" ");
     let cmd = args.shift().toLowerCase();
 
     if (message.content === `<@${bot.user.id}>`) {
-        message.channel.send(`Hello <@${message.author.id}>, Cloud With Prefix \`${prefix}\``);
-        message.react('🆗');
+        message.channel.send(`Halo <@${message.author.id}>, Kerupuk dengan prefix \`${prefix}\``);
+        message.react('😁');
     }
 	
-   if (message.content === `${prefix}setGame`) {
 
-   var embedNoWork = new Discord.RichEmbed()
-  .setTitle("Restricted!")
-  .setColor("#f45f42")
-  .addField("You are restricted from this command", "Its for the command owners only!")
-    
-    var authors = ["401327121580032000"];
-    if(!authors.includes(message.author.id)) {
-    message.channel.send({embed: embedNoWork});
-   }
-    
-    if(!args[0]) return message.reply("Plase paste your text!")
-    
-    bot.user.setGame(`${args[0]}`);
-    
-    
-    return  message.channel.send("Success update Game!")
-    
-};
-    
 
     if (sender.bot) return;
     if (!message.content.startsWith(prefix)) return;
@@ -92,7 +61,7 @@ bot.on("guildMemberAdd", member => {
 	
 	let channel = member.guild.channels.find("name", "bot-spam")
 	
-	channel.send(`Welcome, **${member.user.username}**, In Server **${member.guild.name}**, Total Member **${member.guild.memberCount}**`)
+	channel.send(`Selamat Datang **${member.user.username}**, Di Server **${member.guild.name}**, Total Member **${member.guild.memberCount}**`)
 	
 });
 
@@ -101,7 +70,7 @@ bot.on("guildMemberRemove", member => {
 	
 	let channel = member.guild.channels.find("name", "bot-spam")
 	
-	channel.send(`GoodBye, **${member.user.username}**, On Server **${member.guild.name}**, Total Member **${member.guild.memberCount}**`)
+	channel.send(`Selamat Tinggal **${member.user.username}**, Dari Server **${member.guild.name}**, Total Member **${member.guild.memberCount}**`)
 
 });
 
