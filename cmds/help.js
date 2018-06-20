@@ -46,6 +46,45 @@ exports.run = async (bot, message, args) => {
     });
 });
     }
+    if (args[0] === 'admin') {
+    let pages2 = [`**Page: 1**\n\`addrole\` - berikan role kepada seseorang.\n\`ban\` - banned seseorang dari guild.\n\`kick\` - kick seseorang dari guild.\n\`mute\` - mute seseorang.`,`
+     **Page: 2**\n\`remrole\` - hapus role dari seseorang.\n\`unban\` - Unban seseorang.\n\`warn\` - Warn seseorang.\n\`warnings\` -  Periksa jumlah warning`];
+    let page2 = 1;
+    
+    const embed2 = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setFooter(`Page ${page2} of ${pages2.length} • © ${pkg.name} | Alpha ${pkg.version}`)
+    .setDescription(pages2[page2-1])
+    
+    message.channel.send(embed2).then(msg => {
+    
+    msg.react(`◀`).then( r => {
+    msg.react(`▶`)
+    
+    const backwardsFilter = (reaction, user) => reaction.emoji.name === `◀` && user.id === message.author.id;
+    const forwardsFilter = (reaction, user) => reaction.emoji.name === `▶` && user.id === message.author.id;
+
+    const backwards = msg.createReactionCollector(backwardsFilter, { time:60000 });
+    const forwards = msg.createReactionCollector(forwardsFilter, { time:60000 });
+
+    backwards.on('collect', r => {
+        if (page2 === 1) return;
+            page2--;
+            embed2.setDescription(pages2[page2-1]);
+            embed2.setFooter(`Page ${page2} of ${pages2.length} • © ${pkg.name} | Alpha ${pkg.version}`)
+            msg.edit(embed2)
+    });
+    
+    forwards.on('collect', r => {
+        if (page2 === pages2.length) return;
+            page2++;
+            embed2.setDescription(pages2[page2-1]);
+            embed2.setFooter(`Page ${page2} of ${pages2.length} • © ${pkg.name} | Alpha ${pkg.version}`)
+            msg.edit(embed2)
+            });
+        });
+    });
+    }
 }
 
 exports.help = {
