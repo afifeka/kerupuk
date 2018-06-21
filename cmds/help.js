@@ -44,8 +44,9 @@ exports.run = async (bot, message, args) => {
         embed.setFooter(`Page ${page} of ${pages.length} • © ${pkg.name} | Alpha ${pkg.version}`)
         msg.edit(embed)
         });
-    });
- });
+     });
+  });
+ }
 }
 
 exports.help = {
