@@ -7,7 +7,7 @@ exports.run = async (bot, message, args) => {
     let pages = [`**Member**\n> \`avatar\` - Tampilkan foto profil  seseorang
 > \`ping\` -  Melihat kecepatan internet kamu
 > \`report\` - Report orang mbeling
-> \`invite\` - Invite bot **${bot.username}**`, `**Moderation**\n>\`ban\` - Banned orang melanggar peraturan
+> \`invite\` - Invite bot **${bot.username}**`, `**Moderation**\n> \`ban\` - Banned orang melanggar peraturan
 > \`kick\` - Kick orang yang nakal
 > \`warn\` - Warned orang buka bokep`];
     let page = 1;
