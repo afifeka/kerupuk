@@ -1,4 +1,6 @@
-exports.help = (bot, message, args) => {
+const Discord = require("discord.js");
+
+exports.run = (bot, message, args) => {
 		let wUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!wUser) return message.channel.send("User tidak ditemukan!");
         let wReason = args.join(" ").slice(22);
