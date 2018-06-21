@@ -2,12 +2,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: false});
 const cfg = require("./botconfig.json");
 const fs = require("fs");
-const colors = require('colors');
-const moment = require('moment');
-const snekfetch = require("snekfetch");
 const prefixes = require("./prefixes.json")
-const db = require('quick.db');
-const figlet = require('figlet');
 
 bot.on("message", async message => {
     if(message.author.bot) return;
@@ -25,8 +20,8 @@ bot.on("message", async message => {
     let cmd = args.shift().toLowerCase();
 
     if (message.content === `<@${bot.user.id}>`) {
-        message.channel.send(`Hello <@${message.author.id}>, Cloud With Prefix \`${prefix}\``);
-        message.react('🆗');
+        message.channel.send(`Halo <@${message.author.id}>, Kerupuk dengan Prefix \`${prefix}\``);
+        message.react('😁');
     }
     
 
