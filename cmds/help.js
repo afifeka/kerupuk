@@ -9,8 +9,7 @@ exports.run = async (bot, message, args) => {
 > \`report\` - Report orang mbeling
 > \`invite\` - Invite bot **<@458654300575498270>**`, `**Moderation**\n> \`ban\` - Banned orang melanggar peraturan
 > \`kick\` - Kick orang yang nakal
-> \`warn\` - Warned orang buka bokep`, `Core\n> \`autorole\` - Menetapkan untuk auto Role\n
-> \`setprefix\` - Menetapkan prefix dalam server`];
+> \`warn\` - Warned orang buka bokep`, `Core\n> \`autorole\` - Menetapkan untuk auto Role\n> \`setprefix\` - Menetapkan prefix dalam server`];
     let page = 1;
     
     const embed = new Discord.RichEmbed()
