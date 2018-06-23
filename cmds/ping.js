@@ -9,7 +9,7 @@ exports.run = (bot, message, args) => {
         let embed = new Discord.RichEmbed()
         .addField(":signal_strength: | Latency", lat_ms + "ms", true)
         .addField(":computer: | API", api_ms + "ms", true)
-        .setTitle(":ping_pong:  Pong!")
+        .setDescription(":ping_pong:  Pong!")
         .setColor(0x00AE86)
         message.channel.send(embed);
     });
