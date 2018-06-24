@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 
-exports.help = (bot, message, args) => {
+exports.run = (bot, message, args) => {
 	    const permis = message.guild.roles.find("name", "Staff");
 	    if(!permis) return message.reply("Anda tidak berhak untuk menggunakan command ini!")
 	    
