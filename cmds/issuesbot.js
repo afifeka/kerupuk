@@ -4,7 +4,7 @@ exports.run = (bot, message, args) => {
 	    const permis = message.guild.roles.find("name", "Staff");
 	    if(!permis) return message.reply("Anda tidak berhak untuk menggunakan command ini!")
 	    
-	    const botuser = message.author;
+	    const botuser = message.mentions.users.first()
 	    if(!botuser) return message.reply("Tag bot yang akan anda **issues**!");
 	    const ownerbot = message.guild.members.get(args[1]);
 	    if(!ownerbot) return message.reply("Tag owner bot tersebut!");
