@@ -6,7 +6,7 @@ exports.run = (bot, message, args) => {
 	    
 	    const botuser = message.mentions.users.first()
 	    if(!botuser) return message.reply("Tag bot yang akan anda **issues**!");
-	    const ownerbot = message.guild.members.get(args[1]);
+	    const ownerbot = message.guild.users.get(args[1]);
 	    if(!ownerbot) return message.reply("Tag owner bot tersebut!");
 	    
 	    if(!args[2]) return message.reply("Berikan alasan/reason kenapa bot tersebut di Issues!")
