@@ -50,6 +50,25 @@ bot.on("guildMemberAdd", member => {
 	member.addRole(role);
 });
 
+bot.on("guildMemberAdd", member => {
+	let guild = member.guild;
+	
+	let channel = member.guild.channels.find("name", "join-left")
+	
+	channel.send(`Welcome, to the server ${member}`)
+	
+});
+
+bot.on("guildMemberRemove", member => {
+	let guild = member.guild;
+	
+	let channel = member.guild.channels.find("name", "join-left")
+	
+channel.send(`Goodbye, plase come back ${member.user.username}`)
+
+});
+
+
 bot.on("ready", async () => {
     console.log(`${bot.user.tag} is ready!`);
     bot.user.setGame("Sedang dimasak!");
