@@ -17,7 +17,7 @@ exports.run = async (bot, message, args) => {
 		let channelz = args.join(" ");
 		let channel = message.guild.roles.find("name", channelz);
 		channels[message.guild.id] = {
-			channel: channel.id // yang diambil hanya id nya saja
+			channel: channel // yang diambil hanya id nya saja
 		};
 		fs.writeFile("./channels.json", JSON.stringify(channels), (err) => {
 			if (err) console.log(err)
