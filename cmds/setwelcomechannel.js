@@ -22,7 +22,7 @@ exports.run = async (bot, message, args) => {
 		fs.writeFile("./channels.json", JSON.stringify(channels), (err) => {
 			if (err) console.log(err)
 		});
-		message.reply(`welcomeChannel pada server ini telah aktif **${channel.name}**`);
+		message.reply(`welcomeChannel pada server ini telah aktif **${channel}**`);
 	}
 }
 
