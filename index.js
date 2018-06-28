@@ -71,7 +71,7 @@ channel.send(`Goodbye, plase come back ${member.user.username}`)
 
 bot.on("ready", async () => {
     console.log(`${bot.user.tag} is ready!`);
-    bot.user.setGame("Garuda Security | +help");
+    bot.user.setGame("Hago | +help");
     bot.users.get("401327121580032000").send(`${bot.user.tag} Has Online, Success Reloaded All File's`);
    
 });
