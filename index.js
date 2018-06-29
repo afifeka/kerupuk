@@ -53,7 +53,7 @@ bot.on("guildMemberAdd", member => {
 bot.on("guildMemberAdd", member => {
 	let guild = member.guild;
 	
-	let channel = member.guild.channels.find("name", "join-left")
+	let channel = member.guild.channels.find("name", "bot-spam")
 	
 	channel.send(`Welcome, to the server ${member}`)
 	
@@ -62,7 +62,7 @@ bot.on("guildMemberAdd", member => {
 bot.on("guildMemberRemove", member => {
 	let guild = member.guild;
 	
-	let channel = member.guild.channels.find("name", "join-left")
+	let channel = member.guild.channels.find("name", "bot-spam")
 	
 channel.send(`Goodbye, plase come back ${member.user.username}`)
 
