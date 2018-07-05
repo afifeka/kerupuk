@@ -54,8 +54,8 @@ bot.on("guildMemberAdd", member => {
 	let guild = member.guild;
 	
 	let channel = member.guild.channels.find("name", "bot-spam")
-	
-	channel.send(`Welcome, to the server ${member}`)
+
+	channel.send(`Welcome, to the server ${member.user.username}`)
 	
 });
 
