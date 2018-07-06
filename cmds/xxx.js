@@ -17,7 +17,7 @@ exports.run = async (bot, message, args) => {
         .then(url => {
             const embed = new Discord.RichEmbed()
                 .setColor("RANDOM")
-                .setAuthor("4k", client.user.avatarURL)
+                .setAuthor("4k", bot.user.avatarURL)
                 .setFooter("L0L")
                 .setImage(url);
             message.channel.send({
