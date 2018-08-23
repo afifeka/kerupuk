@@ -20,7 +20,7 @@ bot.on("message", async message => {
     let cmd = args.shift().toLowerCase();
 
     if (message.content === `<@${bot.user.id}>`) {
-        message.channel.send(`Halo <@${message.author.id}>, K² dengan Prefix \`${prefix}\``);
+        message.channel.send(`Halo <@${message.author.id}>, ${bot.user.username} dengan Prefix \`${prefix}\``);
         message.react('😁');
     }
     
@@ -71,7 +71,7 @@ channel.send(`Goodbye, plase come back ${member.user.username}`)
 
 bot.on("ready", async () => {
     console.log(`${bot.user.tag} is ready!`);
-    bot.user.setGame("K² BOT | +help");
+    bot.user.setGame("KingBot | +help");
     bot.users.get("401327121580032000").send(`${bot.user.tag} Has Online, Success Reloaded All File's`);
    
 });
