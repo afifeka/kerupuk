@@ -14,8 +14,8 @@ module.exports.run = async (bot, message, args) => {
     .addField("CPU Usage", `${Math.round(cpu * 100) / 100}%`, true)
     .addField("Memory Usage", `${Math.round(used * 100) / 100} MB`)
     .addField("Uptime", uptimes)
-    .addField("Owner", "<@401327121580032000> (401327121580032000)")
-    .addField("Version", "Alpha v0.0.1")
+    .addField("Owner", "<@401327121580032000> (401327121580032000) ")
+    .addField("Version", "Alpha v0.1.100")
     .setFooter("© kerupuk | Discord.js")
 
     message.channel.send(testembed);
